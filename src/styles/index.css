@@ -1,78 +1,33 @@
 @import 'normalize.css/normalize.css';
 @import 'variables.css';
+@import 'app.css';
+
+@font-face {
+  font-family: 'SF PRO Text';
+  src: url('/public/assets/fonts/sf-pro-text-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF PRO Text';
+  src: url('/public/assets/fonts/sf-pro-text-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* ***********************************
  *
  *    Ire's CSS Reset & Base
  *
- * *********************************** */
-/* Reset margin, padding, border
- * *********************************** */
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p,
-span,
-em,
-small,
-strong,
-sub,
-sup,
-mark,
-del,
-ins,
-strike,
-abbr,
-dfn,
-blockquote,
-q,
-cite,
-code,
-pre,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-div,
-section,
-article,
-main,
-aside,
-nav,
-header,
-hgroup,
-footer,
-img,
-figure,
-figcaption,
-address,
-time,
-audio,
-video,
-canvas,
-iframe,
-details,
-summary,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+ * ***********************************
+    /* Reset margin, padding, border
+ * * html,
+  body, h1, h2, h3, h4, h5, h6, a, p, span, em, small, strong, sub, sup, mark, del, ins,
+  strike, abbr, dfn, blockquote, q, cite, code, pre, ol, ul, li, dl, dt, dd, div, section,
+  article, main, aside, nav, header, hgroup, footer, img, figure, figcaption, address,
+  time, audio, video, canvas, iframe, details, summary, fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -80,7 +35,6 @@ td {
 
 /* Typography
   * *********************************** */
-
 html {
   font-size: 62.5%;
   text-rendering: optimizeLegibility;
@@ -89,7 +43,8 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.4;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'SF PRO Text', Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 
 * {
