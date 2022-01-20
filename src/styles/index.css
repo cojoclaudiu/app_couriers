@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: 'SF PRO Text';
-  src: url('/public/assets/fonts/sf-pro-text-bold.woff') format('woff');
+  src: url('/assets/fonts/sf-pro-text-bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SF PRO Text';
-  src: url('/public/assets/fonts/sf-pro-text-medium.woff') format('woff');
+  src: url('/assets/fonts/sf-pro-text-medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +42,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  line-height: 1.4;
+  line-height: 1.4rem;
   font-family: 'SF PRO Text', Helvetica, Arial, sans-serif;
   font-weight: normal;
 }

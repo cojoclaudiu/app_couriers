@@ -1,0 +1,16 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 5rem;
+  border-bottom: var(--border);
+  min-height: 6.4rem;
+  height: 100%;
+  max-height: 6.4rem;
+}
+
+.logoWrapper {
+  padding-right: 2.4rem;
+  margin-right: 2.4rem;
+  border-right: var(--border-1);
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.filtersWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.filtersWrapper > .filterContainer:not(:last-child) {
+  margin-right: 4rem;
+}
+
+.filterContainer {
+  display: flex;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filterDate {
+  display: flex;
+  padding: 1.1rem 1.6rem;
+  border: var(--border);
+  width: 18rem;
+  border-radius: 0.3rem;
+}

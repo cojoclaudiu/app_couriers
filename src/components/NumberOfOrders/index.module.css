@@ -1,0 +1,20 @@
+.numberContainer {
+  display: flex;
+  align-items: center;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 3.6rem;
+  font-size: 3rem;
+  color: var(--gray-6);
+  line-height: 3.6rem;
+}
+
+.numberLabel {
+  margin-left: 0.8rem;
+  padding-right: 4rem;
+  border-right: var(--border-1);
+}

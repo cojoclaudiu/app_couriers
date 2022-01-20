@@ -2,6 +2,8 @@
   --max: 118.1rem;
 
   --border: 1px solid var(--gray-1);
+  --border-1: 1px solid var(--gray-2);
+  --row: repeat(3, 1fr) repeat(4, 2fr) 1fr;
 
   --gray-1: #f1f1f1;
   --gray-2: #eaeaea;

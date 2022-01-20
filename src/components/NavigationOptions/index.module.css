@@ -1,0 +1,10 @@
+.navWrapper {
+  display: flex;
+  height: 100%;
+  max-height: 3.6rem;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--gray-4);
+  margin: 4rem 0;
+}
