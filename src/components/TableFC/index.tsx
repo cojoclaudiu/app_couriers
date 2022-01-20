@@ -1,5 +1,9 @@
 import data from '../../data/data.json';
+import AWB from '../AWB';
+import COD from '../COD';
 import CourierAvatar from '../CourierAvatar';
+import Timestamp from '../Timestamp';
+import Cell from './Cell';
 import styles from './index.module.css';
 
 function TableFC() {
@@ -19,22 +23,24 @@ function TableFC() {
       {data.map((item) => {
         return (
           <div key={item.id} className={styles.tableRow}>
-            <div>{item.id}</div>
+            <Cell element={item.id} />
+            <Cell element={<CourierAvatar type={item.courier} />} />
+            <Cell element={item.cod && <COD />} />
+            <Cell element={<AWB number={item.awb} timestamp={item.date} />} />
 
-            <CourierAvatar type={item.courier} />
-            <div>{item.cod ? 'Cod' : 'empty'}</div>
+            <Cell
+              element={
+                item.returnAWB ? (
+                  <AWB number={item.returnAWB} timestamp={item.returnDate} />
+                ) : (
+                  <div>----</div>
+                )
+              }
+            />
 
-            <div>
-              <div>{item.awb}</div>
-              <div>{item.date}</div>
-            </div>
-
-            <div>{item.returnAWB || 'no return'}</div>
-
-            <div>{item.seller}</div>
-
-            <div>{item.lastStatus}</div>
-            <div>{item.timestamp}</div>
+            <Cell element={item.seller} />
+            <Cell element={item.lastStatus} />
+            <Cell element={<Timestamp dateTime={item.timestamp} />} />
           </div>
         );
       })}

@@ -1,21 +1,29 @@
 import styles from './index.module.css';
 
+enum Couriers {
+  cargus = 'cargus',
+  fanc = 'fanc',
+  dpd = 'dpd',
+  gld = 'gls',
+  sameday = 'sameday',
+}
+
 interface ICourierAvatar {
-  type: string;
+  type: keyof typeof Couriers | string;
 }
 
 function CourierAvatar({ type }: ICourierAvatar) {
   const avatar = (courierName: string) => {
     switch (courierName) {
-      case 'cargus':
+      case Couriers.cargus:
         return '/assets/couriers/cargus.png';
-      case 'fanc':
+      case Couriers.fanc:
         return '/assets/couriers/fancourier.png';
-      case 'dpd':
+      case Couriers.dpd:
         return '/assets/couriers/dpd.png';
-      case 'gls':
+      case Couriers.gld:
         return '/assets/couriers/gls.png';
-      case 'sameday':
+      case Couriers.sameday:
         return '/assets/couriers/sameday.png';
       default:
         return 'n/a';

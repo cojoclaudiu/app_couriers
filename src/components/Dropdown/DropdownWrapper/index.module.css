@@ -1,0 +1,10 @@
+.dropdownContainer {
+  top: 2.2rem;
+  position: absolute;
+  bottom: 10;
+  background-color: white;
+  padding: 1.9rem 1.2rem;
+  border-radius: 0.8rem;
+  width: 18rem;
+  box-shadow: 0 0.4rem 2.4rem 0 rgba(0, 0, 0, 0.16);
+}

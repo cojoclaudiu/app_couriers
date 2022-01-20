@@ -1,3 +1,5 @@
+import Dropdown from '../Dropdown';
+import DropdownItem from '../Dropdown/DropdownItem';
 import styles from './index.module.css';
 
 function NavigationFilters() {
@@ -5,7 +7,12 @@ function NavigationFilters() {
     <div className={styles.filtersWrapper}>
       <div className={styles.filterContainer}>
         <div>Seller:</div>
-        <div>All</div>
+        <Dropdown name="All">
+          <DropdownItem>Item 1</DropdownItem>
+          <DropdownItem>Item 2</DropdownItem>
+          <DropdownItem>Item 3</DropdownItem>
+          <DropdownItem>Item 4</DropdownItem>
+        </Dropdown>
       </div>
 
       <div className={styles.filterContainer}>

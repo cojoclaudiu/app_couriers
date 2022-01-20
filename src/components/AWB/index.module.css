@@ -1,0 +1,12 @@
+.awbContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.awbNumber {
+  
+}
+
+.awbTimestamp {
+  font-weight: normal;
+}
