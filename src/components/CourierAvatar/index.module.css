@@ -5,6 +5,7 @@
   overflow: hidden;
   position: relative;
   border: var(--border);
+  background-color: white;
 }
 
 .avatarImage {
