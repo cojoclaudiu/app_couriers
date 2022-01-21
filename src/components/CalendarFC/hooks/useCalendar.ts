@@ -17,7 +17,7 @@ function useCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   //user selected day
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  // const [selectedDate, setSelectedDate] = useState(new Date());
 
   // current format of the calendar header with locale
   // we can add custom locale from different locations
