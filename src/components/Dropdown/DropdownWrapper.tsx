@@ -1,5 +1,5 @@
 import { ReactNode, RefObject, Dispatch, SetStateAction, useRef } from 'react';
-import useDropdown from '../hooks/useDropdown';
+import useDropdown from './hooks/useDropdown';
 import styles from './index.module.css';
 
 interface IDropdownWrapper {
@@ -14,7 +14,10 @@ function DropdownWrapper({ children, buttonRef, setToggle }: IDropdownWrapper) {
   useDropdown(buttonRef, dropdownRef, setToggle);
 
   return (
-    <aside className={styles.dropdownContainer} ref={dropdownRef}>
+    <aside
+      className={`${styles.dropdownContainer} ${styles.customClass}`}
+      ref={dropdownRef}
+    >
       {children}
     </aside>
   );

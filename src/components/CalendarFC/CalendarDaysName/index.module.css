@@ -1,0 +1,11 @@
+.weekdaysName {
+  display: grid;
+  grid-template-columns: var(--rowCalendar);
+}
+
+.dayCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}

@@ -1,9 +1,9 @@
-import { forwardRef, Dispatch, SetStateAction } from 'react';
-import DropdownIcon from '../../Icons/DropdownIcon';
+import { forwardRef, Dispatch, SetStateAction, ReactNode } from 'react';
+import DropdownIcon from '../Icons/DropdownIcon';
 import styles from './index.module.css';
 
 interface IDropdownButton {
-  name: string;
+  name: string | ReactNode;
   setToggle: Dispatch<SetStateAction<boolean>>;
   arrowState: boolean;
 }

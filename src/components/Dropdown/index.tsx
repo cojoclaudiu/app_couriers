@@ -1,13 +1,14 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useRef, useState, Fragment } from 'react';
 import DropdownButton from './DropdownButton';
-import DropdownItem from './DropdownItem';
 import DropdownWrapper from './DropdownWrapper';
-
-import styles from './index.module.css';
 
 interface IDropdown {
   children: ReactNode;
-  name: string;
+  name?: string | ReactNode;
+  dropdownButton?: string;
+  buttonName?: string;
+  dropdownIcon?: string;
+  dropdownIconOpen?: string;
 }
 
 function Dropdown({ children, name }: IDropdown) {
@@ -15,21 +16,21 @@ function Dropdown({ children, name }: IDropdown) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className={styles.menu}>
-      <DropdownButton
-        ref={buttonRef}
-        name={name}
-        setToggle={setToggle}
-        arrowState={toggle}
-      />
-
+    <Fragment>
+      {name && (
+        <DropdownButton
+          ref={buttonRef}
+          name={name}
+          setToggle={setToggle}
+          arrowState={toggle}
+        />
+      )}
       {toggle && (
         <DropdownWrapper setToggle={setToggle} buttonRef={buttonRef}>
-          <DropdownItem>All</DropdownItem>
           {children}
         </DropdownWrapper>
       )}
-    </div>
+    </Fragment>
   );
 }
 

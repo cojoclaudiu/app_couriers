@@ -1,0 +1,22 @@
+.daysContainer {
+  display: grid;
+  grid-template-columns: var(--rowCalendar);
+  gap: 0.5rem 0;
+  font-weight: bold;
+}
+
+.dateCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 2.5rem;
+  border-radius: 50%;
+  transition: all 0.25s ease-in-out;
+  color: var(--gray-6);
+}
+
+.dateCell:hover {
+  background-color: var(--green-5);
+  color: white;
+}

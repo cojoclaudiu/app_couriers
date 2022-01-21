@@ -3,7 +3,11 @@
 
   --border: 1px solid var(--gray-1);
   --border-1: 1px solid var(--gray-2);
+
   --row: repeat(3, 1fr) repeat(4, 2fr) 1fr;
+  --rowCalendar: repeat(7, 2.5rem);
+
+  --shadow: 0 0.4rem 2.4rem 0 rgba(0, 0, 0, 0.16);
 
   --gray-1: #f1f1f1;
   --gray-2: #eaeaea;
@@ -28,5 +32,6 @@
   --green-1: #def9e9;
   --green-2: #baf5d1;
   --green-3: #80dca7;
-  --green-4: #4ec982;
+  --green-4: #34dd79;
+  --green-5: #4ec982;
 }

@@ -1,0 +1,30 @@
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--gray-6);
+  text-transform: capitalize;
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  border-bottom: var(--border-1);
+}
+
+.buttonMonth {
+  width: 0.6rem;
+  height: 0.4rem;
+  cursor: pointer;
+  color: var(--gray-3);
+}
+
+.buttonMonth:hover {
+  color: var(--gray-6);
+}
+
+.buttonLeft {
+  transform: rotate(90deg);
+}
+
+.buttonRight {
+  transform: rotate(-90deg);
+}

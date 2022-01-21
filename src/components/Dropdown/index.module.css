@@ -1,7 +1,47 @@
-.menu {
+.dropdownButton {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  cursor: pointer;
+  margin-left: 0.8rem;
+}
+
+.dropdownIcon {
+  display: flex;
+  width: 0.6rem;
+  height: 0.4rem;
+  margin-left: 0.8rem;
+  transition: all 0.2s ease-in-out;
+  color: var(--gray-5);
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+  color: var(--gray-6);
+}
+
+.dropdownItem {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.dropdownItem:hover {
+  background-color: var(--gray-1);
+  color: var(--gray-6);
+}
+
+.dropdownContainer {
+  position: absolute;
+  bottom: 10;
+  background-color: white;
+  border-radius: 0.8rem;
+  min-width: 18rem;
+  width: max-content;
+  box-shadow: var(--shadow);
+}
+
+.customClass {
+  top: 2.4rem;
+  padding: 1.9rem 1.2rem;
 }
