@@ -1,3 +1,3 @@
 #### Frisbo AppFrisbo App
-npm install
+npm install\
 npm run dev
