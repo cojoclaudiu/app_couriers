@@ -1,6 +1,4 @@
 import CalendarDateRange from '../CalendarDateRange';
-import CalendarFC from '../CalendarFC';
-import CalendarPicker from '../CalendarPicker';
 import Dropdown from '../Dropdown';
 import DropdownItem from '../Dropdown/DropdownItem';
 import styles from './index.module.css';
