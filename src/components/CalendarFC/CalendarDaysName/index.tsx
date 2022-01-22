@@ -1,8 +1,12 @@
+import { useContext } from 'react';
+import { CalendarContext } from '../context/calendarContext';
 import useCalendar from '../hooks/useCalendar';
 import styles from './index.module.css';
 
 function CalendarDaysName() {
-  const { listWeekDaysName } = useCalendar();
+  const { currentDate, setCurrentDate } = useContext(CalendarContext);
+  const { listWeekDaysName } = useCalendar(currentDate, setCurrentDate);
+
   return (
     <div className={styles.weekdaysName}>
       {listWeekDaysName.map((day) => (

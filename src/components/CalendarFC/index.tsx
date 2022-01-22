@@ -1,20 +1,14 @@
-import { Fragment } from 'react';
 import Dropdown from '../Dropdown';
-import CalendarDays from './CalendarDays';
-import CalendarDaysName from './CalendarDaysName';
-import CalendarHeader from './CalendarHeader';
-import useCalendar from './hooks/useCalendar';
+import CalendarMonth from './CalendarMonth';
+import CalendarContextProvider from './context/calendarContext';
 
 function CalendarFC() {
-  const { headerDate } = useCalendar();
   return (
-    <Fragment>
-      <Dropdown name={headerDate}>
-        <CalendarHeader />
-        <CalendarDaysName />
-        <CalendarDays />
+    <CalendarContextProvider>
+      <Dropdown name={'date'}>
+        <CalendarMonth months={2} />
       </Dropdown>
-    </Fragment>
+    </CalendarContextProvider>
   );
 }
 

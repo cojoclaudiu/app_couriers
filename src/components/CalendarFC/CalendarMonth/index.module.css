@@ -1,0 +1,8 @@
+.calendarsContainer {
+  display: flex;
+  padding: 0.4rem 0.6rem;
+}
+
+.calendarsContainer > .calendar:not(:last-child) {
+  margin-right: 2.7rem;
+}

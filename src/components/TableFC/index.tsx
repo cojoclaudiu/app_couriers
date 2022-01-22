@@ -11,7 +11,7 @@ import useRowDelimiter from './hooks/useRowDelimiter';
 import styles from './index.module.css';
 
 function TableFC() {
-  const selectedItemsTable = [15, 13, 11];
+  const selectedItemsTable = [15, 13, 11, 3];
 
   const { selectedItems } = useRowDelimiter(styles.delimiter);
 
