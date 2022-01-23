@@ -8,7 +8,6 @@ function CalendarDays() {
   const { getMonthWeekDays } = useCalendar(currentDate, setCurrentDate);
   const calendar = getMonthWeekDays({ forceSixWeeks: true });
 
-
   return (
     <div className={styles.daysContainer}>
       {calendar.map((day) => (

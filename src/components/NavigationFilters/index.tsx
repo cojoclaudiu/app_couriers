@@ -28,7 +28,7 @@ function NavigationFilters() {
 
       <div className={styles.filterContainer}>
         <div className={styles.filterTitle}>COD Status:</div>
-        <Dropdown dropdownButton={styles.claudiu} name="All">
+        <Dropdown name="All">
           <DropdownItem>Item 1</DropdownItem>
           <DropdownItem>Item 2</DropdownItem>
           <DropdownItem>Item 3</DropdownItem>

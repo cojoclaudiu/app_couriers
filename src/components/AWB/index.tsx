@@ -2,7 +2,7 @@ import styles from './index.module.css';
 
 interface IAWB {
   number: string;
-  timestamp: string;
+  timestamp: string | null;
 }
 
 function AWB({ number, timestamp }: IAWB) {

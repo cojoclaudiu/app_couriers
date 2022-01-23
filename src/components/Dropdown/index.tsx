@@ -5,7 +5,6 @@ import DropdownWrapper from './DropdownWrapper';
 interface IDropdown {
   children: ReactNode;
   name?: string | ReactNode;
-  dropdownButton?: string;
   buttonName?: string;
   dropdownIcon?: string;
   dropdownIconOpen?: string;

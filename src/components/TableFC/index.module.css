@@ -6,8 +6,7 @@
   font-weight: bold;
 }
 
-.tableHeader,
-.tableRow {
+.tableHeader {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: var(--row);
@@ -19,60 +18,4 @@
   height: 4rem;
   margin-bottom: 0.2rem;
   border-bottom: 2px solid var(--gray-1);
-}
-
-.tableRow {
-  height: 4.8rem;
-  border-radius: 0.4rem;
-  background-color: white;
-  transition: all 0.1s ease-in;
-}
-
-.tableRow:hover {
-  filter: brightness(0.96);
-}
-
-.rowRed {
-  background-color: var(--coral-1);
-  color: var(--coral);
-}
-
-.rowGreen {
-  color: var(--green);
-  background-color: var(--green-1);
-}
-
-.rowBlue {
-  color: var(--blue);
-  background-color: var(--blue-1);
-}
-
-.delimiter {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  border-bottom: var(--border);
-  height: 0;
-}
-
-.chevronIcon {
-  width: 0.6rem;
-  height: 1.2rem;
-  margin: 1.6rem;
-}
-
-.idContainer {
-  padding-left: 2.4rem;
-}
-
-.noItemInCell {
-  width: 3.2rem;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  height: 0;
-  border-bottom: 1px solid currentColor;
 }

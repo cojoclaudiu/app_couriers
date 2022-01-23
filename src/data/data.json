@@ -2,7 +2,7 @@
   {
     "id": 120101,
     "courier": "cargus",
-    "cod": "COD",
+    "cod": true,
     "awb": "2EMG2419812788001",
     "date": "24 Jan, 2020 / 14:45:00",
     "returnAWB": null,
