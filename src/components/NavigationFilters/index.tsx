@@ -38,7 +38,6 @@ function NavigationFilters() {
 
       <div className={styles.filterDate}>
         <div>Date:</div>
-        {/* <CalendarFC /> */}
         <CalendarDateRange />
       </div>
     </div>

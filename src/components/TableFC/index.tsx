@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import data from '../../data/data.json';
 import AWB from '../AWB';
-import COD from '../COD';
 import CourierAvatar from '../CourierAvatar';
 import ChevronIcon from '../Icons/ChevronIcon';
 import StatusLabel from '../StatusLabel';
@@ -12,6 +11,12 @@ import styles from './index.module.css';
 
 function TableFC() {
   const selectedItemsTable = [15, 13, 11, 3];
+  const lastItemStatus = (index: number) =>
+    ((index === 14 || index === 12 || index === 0 || index === 2) && 'successLight') ||
+    ((index === 13 || index === 3) && 'successDark') ||
+    (index === 15 && 'warningDarkOutline') ||
+    (index === 11 && 'noticeDark') ||
+    'warningLight';
 
   const { selectedItems } = useRowDelimiter(styles.delimiter);
 
@@ -40,31 +45,37 @@ function TableFC() {
             >
               <Cell element={<div className={styles.idContainer}>{item.id}</div>} />
               <Cell element={<CourierAvatar type={item.courier} />} />
-              <Cell element={item.cod && <COD />} />
+              <Cell
+                element={
+                  item.cod && (
+                    <StatusLabel
+                      label="COD"
+                      type={
+                        (index === 15 && 'warningDark') ||
+                        (index === 13 && 'successDark') ||
+                        (index === 11 && 'noticeOutline') ||
+                        (index === 10 && 'warningOutline') ||
+                        (index === 3 && 'successOutline') ||
+                        'defaultOutline'
+                      }
+                    />
+                  )
+                }
+              />
               <Cell element={<AWB number={item.awb} timestamp={item.date} />} />
               <Cell
                 element={
                   item.returnAWB ? (
                     <AWB number={item.returnAWB} timestamp={item.returnDate} />
                   ) : (
-                    <div>----</div>
+                    <hr className={styles.noItemInCell} />
                   )
                 }
               />
               <Cell element={item.seller} />
               <Cell
                 element={
-                  <StatusLabel
-                    label={item.lastStatus}
-                    color={
-                      ((index === 14 || index === 12 || index === 0 || index === 2) &&
-                        'greenLight') ||
-                      ((index === 13 || index === 3) && 'greenDark') ||
-                      (index === 15 && 'coralOutline') ||
-                      (index === 11 && 'blueFull') ||
-                      'coralFull'
-                    }
-                  />
+                  <StatusLabel label={item.lastStatus} type={lastItemStatus(index)} />
                 }
               />
               <Cell element={<Timestamp dateTime={item.timestamp} />} />

@@ -6,8 +6,8 @@ import styles from './index.module.css';
 function CalendarDays() {
   const { currentDate, setCurrentDate } = useContext(CalendarContext);
   const { getMonthWeekDays } = useCalendar(currentDate, setCurrentDate);
-
   const calendar = getMonthWeekDays({ forceSixWeeks: true });
+
 
   return (
     <div className={styles.daysContainer}>

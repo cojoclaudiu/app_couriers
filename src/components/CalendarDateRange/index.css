@@ -82,12 +82,12 @@
 }
 
 .rdrMonth {
-  /* width: 27.667em; */
-  width: 22.5rem;
+  padding: 0 0.5rem;
 }
 
 .rdrWeekDays {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 3rem);
 }
 
 .rdrWeekDay {
@@ -97,8 +97,8 @@
 }
 
 .rdrDays {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 3rem);
 }
 
 .rdrDateDisplayWrapper {
@@ -128,8 +128,6 @@
 
 .rdrDateInput .rdrWarning {
   position: absolute;
-  font-size: 1.6em;
-  line-height: 1.6em;
   top: 0;
   right: 0.25em;
   color: #ff0000;
@@ -137,33 +135,26 @@
 
 .rdrDay {
   box-sizing: inherit;
-  /* width: calc(100% / 7); */
-  width: 2.5rem;
+  width: 5rem;
   position: relative;
   font: inherit;
   cursor: pointer;
 }
 
 .rdrDayNumber {
-  /* display: block; */
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .rdrDayNumber span {
+  width: 3rem;
   color: var(--gray-6);
 }
 
 .rdrDayDisabled {
   cursor: not-allowed;
-}
-
-@supports (-ms-ime-align: auto) {
-  .rdrDay {
-    flex-basis: 14.285% !important;
-  }
 }
 
 .rdrSelected,
@@ -174,6 +165,10 @@
 }
 
 .rdrInRange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
 }
 
 .rdrDayStartPreview,

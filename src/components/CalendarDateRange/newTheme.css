@@ -1,0 +1,155 @@
+@import 'index.css';
+
+.rdrCalendarWrapper {
+  --mutualMarginPadding: 0.833em;
+  --mutualRadius: 1.333em;
+}
+
+.rdrDay {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rdrDayNumber > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 10;
+  color: var(--gray-6);
+}
+
+.rdrDayNumber > span:hover {
+  border-radius: 50%;
+  background-color: var(--green-4);
+  color: white !important;
+}
+
+.rdrSelected,
+.rdrInRange {
+  display: flex;
+  background-color: var(--green-1);
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+}
+.rdrSelected::after,
+.rdrInRange::after {
+  background-color: red;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+}
+
+.rdrStartEdge,
+.rdrEndEdge {
+  display: flex;
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--green-4);
+}
+
+/* SELECTED START AND END DAY COLOR */
+.rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span {
+  color: white;
+}
+
+/* 
+DATES WHICH ARE PRESENT IN THE CALENDAR BUT
+ARE NOT PART OF THAT MONTH
+*/
+.rdrDayPassive .rdrStartEdge,
+.rdrDayPassive .rdrEndEdge,
+.rdrDayPassive .rdrSelected,
+.rdrDayPassive .rdrDayStartPreview,
+.rdrDayPassive .rdrDayInPreview,
+.rdrDayPassive .rdrDayEndPreview,
+.rdrDayPassive .rdrDayNumber span {
+  display: none;
+}
+
+.rdrDayPassive {
+  pointer-events: none;
+}
+
+/*HEADER MONTH NAME*/
+
+.rdrMonthName {
+  text-align: center;
+  border-bottom: var(--border);
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.2rem;
+}
+
+/* DAYS OF THE WEEK NAME*/
+.rdrWeekDays {
+  margin-bottom: 1.6rem;
+}
+
+/* DISABLED DATE NUMBER */
+.rdrDayDisabled {
+  background-color: var(--gray-1);
+}
+
+.rdrDayDisabled .rdrDayNumber span {
+  color: var(--gray-3);
+}
+
+/* 
+.rdrDayStartOfMonth .rdrDayInPreview,
+.rdrDayStartOfMonth .rdrDayEndPreview,
+.rdrDayStartOfWeek .rdrDayInPreview,
+.rdrDayStartOfWeek .rdrDayEndPreview {
+  border-left-width: 1px;
+}
+
+.rdrDayEndOfMonth .rdrDayInPreview,
+.rdrDayEndOfMonth .rdrDayStartPreview,
+.rdrDayEndOfWeek .rdrDayInPreview,
+.rdrDayEndOfWeek .rdrDayStartPreview {
+  border-right-width: 1px;
+}
+
+.rdrDayStartPreview,
+.rdrDayInPreview,
+.rdrDayEndPreview {
+  background: rgba(25, 202, 63, 0.09);
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  border: 0 solid var(--green-4);
+  z-index: 1;
+  height: 2.5rem;
+}
+
+.rdrDayStartPreview {
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  border-top-left-radius: var(--mutualRadius);
+  border-bottom-left-radius: var(--mutualRadius);
+  left: 0;
+}
+
+.rdrDayInPreview {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.rdrDayEndPreview {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-right-radius: var(--mutualRadius);
+  border-bottom-right-radius: var(--mutualRadius);
+} */
