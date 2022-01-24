@@ -232,3 +232,33 @@
 .Selectable .DayPicker-Day--end {
   border-radius: 50% !important;
 }
+
+.DayPicker-Day--selected[aria-disabled='true'] {
+  background-color: var(--green-1);
+}
+/* :not(.DayPicker-Week
+    [aria-selected='true']:first-child) */
+
+[aria-selected='true']:not(.DayPicker-Day--start):not(.DayPicker-Week
+    [aria-selected='true']:first-child)::before {
+  content: '';
+  display: flex;
+  width: 1.5rem;
+  height: 2.5rem;
+  left: -1rem;
+  position: absolute;
+  background-color: var(--green-1);
+  z-index: -1;
+}
+
+[aria-selected='true']:not(.DayPicker-Day--end):not(.DayPicker-Week
+    [aria-selected='true']:nth-child(7))::after {
+  content: '';
+  display: flex;
+  width: 1.5rem;
+  height: 2.5rem;
+  left: 2rem;
+  position: absolute;
+  background-color: var(--green-1);
+  z-index: -1;
+}
