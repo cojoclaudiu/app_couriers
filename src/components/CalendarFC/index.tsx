@@ -36,12 +36,14 @@ function CalendarFC() {
         modifiers={modifiers}
         firstDayOfWeek={1}
         className="Selectable"
-        // navbarElement={<CalendarNavbar initialMonth={new Date()} />}
         captionElement={({ date }) => <CalendarMonth date={date} />}
-        // Use the fixedWeeks prop to display 6 weeks per month.
-        // fixedWeeks
         // I will add custom navigation in CalendarNavbar component
         canChangeMonth={false}
+        // @fixedWeeks Use the fixedWeeks prop to display 6 weeks per month.
+        // fixedWeeks
+
+        // @showOutsideDays show/display the outside days but keep the container
+        showOutsideDays={false}
       />
       <div className={styles.footerCalendar}>
         <PrimaryButton name="Cancel" onClick={() => {}} type="plain" />

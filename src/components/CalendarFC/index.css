@@ -1,9 +1,8 @@
-/* DayPicker styles */
-
 .DayPicker {
   display: flex;
   font-size: 1.2rem;
   font-weight: bold;
+  line-height: 1.4rem;
 }
 
 .DayPicker-wrapper {
@@ -28,241 +27,102 @@
   user-select: none;
 }
 
-.DayPicker-NavBar {
-}
-
-.DayPicker-NavButton {
-  position: absolute;
-  top: 1em;
-  right: 1.5em;
-  left: auto;
-
-  display: inline-block;
-  margin-top: 2px;
-  width: 1.25em;
-  height: 1.25em;
-  background-position: center;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  color: #8b9898;
-  cursor: pointer;
-}
-
-.DayPicker-NavButton:hover {
-  opacity: 0.8;
-}
-
-.DayPicker-NavButton--prev {
-  margin-right: 1.5em;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAwCAYAAAB5R9gVAAAABGdBTUEAALGPC/xhBQAAAVVJREFUWAnN2G0KgjAYwPHpGfRkaZeqvgQaK+hY3SUHrk1YzNLay/OiEFp92I+/Mp2F2Mh2lLISWnflFjzH263RQjzMZ19wgs73ez0o1WmtW+dgA01VxrE3p6l2GLsnBy1VYQOtVSEH/atCCgqpQgKKqYIOiq2CBkqtggLKqQIKgqgCBjpJ2Y5CdJ+zrT9A7HHSTA1dxUdHgzCqJIEwq0SDsKsEg6iqBIEoq/wEcVRZBXFV+QJxV5mBtlDFB5VjYTaGZ2sf4R9PM7U9ZU+lLuaetPP/5Die3ToO1+u+MKtHs06qODB2zBnI/jBd4MPQm1VkY79Tb18gB+C62FdBFsZR6yeIo1YQiLJWMIiqVjQIu1YSCLNWFgijVjYIuhYYCKoWKAiiFgoopxYaKLUWOii2FgkophYp6F3r42W5A9s9OcgNvva8xQaysKXlFytoqdYmQH6tF3toSUo0INq9AAAAAElFTkSuQmCC');
-}
-
-.DayPicker-NavButton--next {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAwCAYAAAB5R9gVAAAABGdBTUEAALGPC/xhBQAAAXRJREFUWAnN119ugjAcwPHWzJ1gnmxzB/BBE0n24m4xfNkTaOL7wOtsl3AXMMb+Vjaa1BG00N8fSEibPpAP3xAKKs2yjzTPH9RAjhEo9WzPr/Vm8zgE0+gXATAxxuxtqeJ9t5tIwv5AtQAApsfT6TPdbp+kUBcgVwvO51KqVhMkXKsVJFXrOkigVhCIs1Y4iKlWZxB1rX4gwlpRIIpa8SDkWmggrFq4IIRaJKCYWnSgnrXIQV1r8YD+1Vrn+bReagysIFfLABRt31v8oBu1xEBttfRbltmfjgEcWh9snUS2kNdBK6WN1vrOWxObWsz+fjxevsxmB1GQDfINWiev83nhaoiB/CoOU438oPrhXS0WpQ9xc1ZQWxWHqUYe0I0qrKCQKjygDlXIQV2r0IF6ViEBxVTBBSFUQQNhVYkHIVeJAtkNsbQ7c1LtzP6FsObhb2rCKv7NBIGoq4SDmKoEgTirXAcJVGkFSVVpgoSrXICGUMUH/QBZNSUy5XWUhwAAAABJRU5ErkJggg==');
-}
-
-.DayPicker-NavButton--interactionDisabled {
-  display: none;
-}
-
-.DayPicker-Caption {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gray-6);
-  padding-bottom: 1.6rem;
-  margin-bottom: 1.6rem;
-  border-bottom: var(--border-1);
-}
-
-.DayPicker-Caption > div {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
+/* GRID FOR NAME OF THE WEEKS AND THE WEEK ROWS
+THE COLUMN OF THIS GRID NEEDS TO BE THE SAME FOR
+WEEK ROWS AND WEEK DAYS NAME */
 .DayPicker-WeekdaysRow,
 .DayPicker-Week {
   display: grid;
-  grid-template-columns: repeat(7, 2.5rem);
+  grid-template-columns: repeat(7, 3.2rem);
+  align-items: center;
+  justify-items: center;
+  height: 2.5rem;
 }
 
+/* DAYS OF THE WEEK NAME */
 .DayPicker-WeekdaysRow {
+  color: var(--gray-4);
   margin-bottom: 1.6rem;
 }
 
+/* WEEK ROWS  */
 .DayPicker-Body .DayPicker-Week:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 
-.DayPicker-Weekday {
+/* SELECTED START DAY */
+.DayPicker-Day.DayPicker-Day--start.DayPicker-Day--selected[aria-selected='true'] {
   display: flex;
-  color: var(--gray-4);
-}
-
-.DayPicker-Weekday abbr[title] {
-  border-bottom: none;
-  text-decoration: none;
-}
-
-.DayPicker-Body {
-  display: table-row-group;
-}
-
-.DayPicker-Day {
-  display: flex;
-  height: 2.5rem;
   width: 2.5rem;
+  height: 2.5rem;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  text-align: center;
-  cursor: pointer;
+  background-color: red;
+  color: white;
+  z-index: 1;
 }
 
-.DayPicker-WeekNumber {
-  display: table-cell;
-  padding: 0.5em;
-  min-width: 1em;
-  border-right: 1px solid #eaecec;
-  color: #8b9898;
-  vertical-align: middle;
-  text-align: right;
-  font-size: 0.75em;
-  cursor: pointer;
+/* SELECTED END DAY */
+.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected[aria-selected='true'] {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
 }
 
-.DayPicker--interactionDisabled .DayPicker-Day {
-  cursor: default;
-}
-
-.DayPicker-Footer {
-  padding-top: 0.5em;
-}
-
-.DayPicker-TodayButton {
-  border: none;
-  background-color: transparent;
-  background-image: none;
-  box-shadow: none;
-  color: var(--blue);
-  font-size: 0.875em;
-  cursor: pointer;
-}
-
-/* Default modifiers */
-
-.DayPicker-Day--today {
-  color: var(--green);
-}
-
-.DayPicker-Day--disabled {
-  color: #dce0e0;
-  cursor: default;
-  /* background-color: #eff1f1; */
-}
-
-/* Example modifiers */
-
-.DayPicker-Day--sunday {
-  background-color: #f7f8f8;
-}
-
-.DayPicker-Day--sunday:not(.DayPicker-Day--today) {
-  color: #dce0e0;
-}
-
-.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+/* DAYS OUTSIDE THE CALENDAR AND DISABLED */
+/* .DayPicker-Months
+  .DayPicker-Month
+  .DayPicker-Week
+  .DayPicker-Day.DayPicker-Day--selected.DayPicker-Day--outside[aria-disabled='true'] {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: gold;
+} */
+
+.DayPicker-Week
+  .DayPicker-Day.DayPicker-Day--selected.DayPicker-Day--outside:not(.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected) {
+  display: block;
+  width: 3.2rem;
+  height: 2.5rem;
+  background-color: purple;
+}
+
+/* DAYS IN RANGE BUT NOT DAY START/END SELECTED */
+.DayPicker-Day.DayPicker-Day--selected[aria-selected='true']:not(.DayPicker-Day--start.DayPicker-Day--selected):not(.DayPicker-Day--end.DayPicker-Day--selected) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: olivedrab;
+}
+
+.DayPicker-Day.DayPicker-Day--selected[aria-selected='true'].DayPicker-Day--start.DayPicker-Day--selected:not(.DayPicker-Day--end.DayPicker-Day--selected)
+  + [aria-selected='true']::after {
+  content: '';
   width: 2.5rem;
   height: 2.5rem;
-  background-color: var(--green-4);
-  color: white;
-  position: relative;
-}
-
-.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
-  background-color: var(--green-4);
-}
-
-.DayPicker:not(.DayPicker--interactionDisabled)
-  .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-  border-radius: 50% !important;
-  color: white;
-  background-color: var(--green-4);
-}
-
-/* DayPickerInput */
-
-.DayPickerInput {
-  display: inline-block;
-}
-
-.DayPickerInput-OverlayWrapper {
-  position: relative;
-}
-
-.DayPickerInput-Overlay {
   position: absolute;
-  left: 0;
-  z-index: 1;
-
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin-right: 4rem;
+  /* left: 1rem; */
+  background-color: yellowgreen;
 }
 
-/* RANGE */
-
-.Selectable
-  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-  background-color: var(--green-1) !important;
-  color: var(--green-6);
-}
-.Selectable .DayPicker-Day {
-  border-radius: 0 !important;
-}
-
-.Selectable .DayPicker-Day--start,
-.Selectable .DayPicker-Day--end {
-  border-radius: 50% !important;
-}
-
-.DayPicker-Day--selected[aria-disabled='true'] {
-  background-color: var(--green-1);
-}
-/* :not(.DayPicker-Week
-    [aria-selected='true']:first-child) */
-
-[aria-selected='true']:not(.DayPicker-Day--start):not(.DayPicker-Week
-    [aria-selected='true']:first-child)::before {
+.DayPicker-Day.DayPicker-Day--selected[aria-selected='true'].DayPicker-Day--end.DayPicker-Day--selected:not(.DayPicker-Day--start.DayPicker-Day--selected):not(:first-child):before {
   content: '';
-  display: flex;
-  width: 1.5rem;
+  width: 2rem;
   height: 2.5rem;
-  left: -1rem;
   position: absolute;
-  background-color: var(--green-1);
+  margin-right: 2rem;
+  background-color: peru;
   z-index: -1;
 }
-
-[aria-selected='true']:not(.DayPicker-Day--end):not(.DayPicker-Week
-    [aria-selected='true']:nth-child(7))::after {
-  content: '';
-  display: flex;
-  width: 1.5rem;
-  height: 2.5rem;
-  left: 2rem;
-  position: absolute;
-  background-color: var(--green-1);
-  z-index: -1;
-}
-
-/* DATES OUTSIDE THE MONTH FROM PREVIOUS OR NEXT MONTH */
-.DayPicker-Day--outside[aria-disabled='true'] {
-  color: red;
-}
-/* .DayPicker-Day--outside {
-  color: #8b9898;
-  cursor: default;
-} */
