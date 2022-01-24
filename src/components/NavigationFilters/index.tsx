@@ -1,4 +1,4 @@
-import CalendarRDP from '../CalendarRDP';
+import CalendarFC from '../CalendarFC';
 import Dropdown from '../Dropdown';
 import DropdownItem from '../Dropdown/DropdownItem';
 import styles from './index.module.css';
@@ -39,7 +39,7 @@ function NavigationFilters() {
       <div className={styles.filterDate}>
         <div>Date:</div>
         {/* <CalendarDateRange /> */}
-        <CalendarRDP />
+        <CalendarFC />
       </div>
     </div>
   );

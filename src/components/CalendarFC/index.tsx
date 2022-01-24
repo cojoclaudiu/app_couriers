@@ -1,17 +1,53 @@
+import { useState } from 'react';
+import DayPicker, { DateUtils } from 'react-day-picker';
+import PrimaryButton from '../Buttons/PrimaryButton';
 import Dropdown from '../Dropdown';
+import styles from './calendar.module.css';
 import CalendarMonth from './CalendarMonth';
-import CalendarContextProvider from './context/calendarContext';
-import format from 'date-fns/format';
+import './index.css';
 
 function CalendarFC() {
-  const dateFormat = format(new Date(), 'MM/dd/yyyy');
+  const [calendarDays, setCalendarDays] = useState({
+    selectedDay: new Date(),
+    from: undefined,
+    to: undefined,
+  });
+  const { from, to } = calendarDays;
+  const modifiers = { start: from, end: to };
+
+  const handleRangeClick = (day: any) => {
+    const range = DateUtils.addDayToRange(day, calendarDays);
+    setCalendarDays((prev: any) => ({ ...prev, ...range }));
+  };
 
   return (
-    <CalendarContextProvider>
-      <Dropdown name={dateFormat}>
-        <CalendarMonth months={2} />
-      </Dropdown>
-    </CalendarContextProvider>
+    <Dropdown
+      calendar={true}
+      name={
+        calendarDays.selectedDay
+          ? calendarDays.selectedDay.toLocaleDateString()
+          : new Date()
+      }
+    >
+      <DayPicker
+        numberOfMonths={2}
+        onDayClick={handleRangeClick}
+        selectedDays={[from, { from, to }]}
+        modifiers={modifiers}
+        firstDayOfWeek={1}
+        className="Selectable"
+        // navbarElement={<CalendarNavbar initialMonth={new Date()} />}
+        captionElement={({ date }) => <CalendarMonth date={date} />}
+        // Use the fixedWeeks prop to display 6 weeks per month.
+        // fixedWeeks
+        // I will add custom navigation in CalendarNavbar component
+        canChangeMonth={false}
+      />
+      <div className={styles.footerCalendar}>
+        <PrimaryButton name="Cancel" onClick={() => {}} type="plain" />
+        <PrimaryButton name="Set" onClick={() => {}} type="successLight" />
+      </div>
+    </Dropdown>
   );
 }
 

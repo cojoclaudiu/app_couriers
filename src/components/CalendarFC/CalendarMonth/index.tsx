@@ -1,26 +1,25 @@
-import CalendarDays from '../CalendarDays';
-import CalendarDaysName from '../CalendarDaysName';
-import CalendarHeader from '../CalendarHeader';
+import DropdownIcon from '../../Icons/DropdownIcon';
 import styles from './index.module.css';
 
-interface ICalendarMonths {
-  months: number;
+interface ICalendarMonth {
+  date: Date;
+  localeUtils?: Object;
 }
 
-function CalendarMonth({ months }: ICalendarMonths) {
-  const numberOfCalendars = Array.from(Array(months).keys());
-
+function CalendarMonth({ date }: ICalendarMonth) {
   return (
-    <div className={styles.calendarsContainer}>
-      {numberOfCalendars.map((monthNumber) => {
-        return (
-          <div className={styles.calendar} key={monthNumber}>
-            <CalendarHeader />
-            <CalendarDaysName />
-            <CalendarDays />
-          </div>
-        );
-      })}
+    <div className={styles.monthNameContainer}>
+      <button className={styles.previousMonth} onClick={() => {}}>
+        <DropdownIcon />
+      </button>
+
+      <div className={styles.monthName}>
+        {date.toLocaleString('default', { month: 'long', year: 'numeric' })}
+      </div>
+
+      <button className={styles.nextMonth} onClick={() => {}}>
+        <DropdownIcon />
+      </button>
     </div>
   );
 }
