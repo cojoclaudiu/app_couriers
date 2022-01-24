@@ -3,6 +3,7 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 import PrimaryButton from '../Buttons/PrimaryButton';
 import Dropdown from '../Dropdown';
 import styles from './calendar.module.css';
+import CalendarMonth from './CalendarMonth';
 import './index.css';
 
 function CalendarRDP() {
@@ -49,6 +50,12 @@ function CalendarRDP() {
         modifiers={modifiers}
         firstDayOfWeek={1}
         className="Selectable"
+        // navbarElement={<CalendarNavbar initialMonth={new Date()} />}
+        captionElement={({ date }) => <CalendarMonth date={date} />}
+        // Use the fixedWeeks prop to display 6 weeks per month.
+        // fixedWeeks
+        // I will add custom navigation in CalendarNavbar component
+        canChangeMonth={false}
       />
       <div className={styles.footerCalendar}>
         <PrimaryButton name="Cancel" onClick={() => {}} type="plain" />

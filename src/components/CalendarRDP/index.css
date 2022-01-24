@@ -155,11 +155,6 @@
   color: var(--green);
 }
 
-.DayPicker-Day--outside {
-  color: #8b9898;
-  cursor: default;
-}
-
 .DayPicker-Day--disabled {
   color: #dce0e0;
   cursor: default;
@@ -262,3 +257,12 @@
   background-color: var(--green-1);
   z-index: -1;
 }
+
+/* DATES OUTSIDE THE MONTH FROM PREVIOUS OR NEXT MONTH */
+.DayPicker-Day--outside[aria-disabled='true'] {
+  color: red;
+}
+/* .DayPicker-Day--outside {
+  color: #8b9898;
+  cursor: default;
+} */
