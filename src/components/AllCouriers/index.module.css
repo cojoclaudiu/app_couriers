@@ -3,18 +3,9 @@
   align-items: center;
   font-weight: bold;
   font-size: 1.6rem;
-  color: var(--gray-6);
+  color: var(--gray-5);
   line-height: 1.9rem;
   height: 100%;
   cursor: pointer;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 0.6rem;
-  height: 0.4rem;
-  color: var(--gray-5);
-  margin-left: 0.8rem;
+  position: relative;
 }
