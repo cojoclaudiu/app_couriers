@@ -6,16 +6,19 @@ interface IDropdownWrapper {
   children: ReactNode;
   buttonRef: RefObject<HTMLButtonElement>;
   setToggle: Dispatch<SetStateAction<boolean>>;
+  calendar: boolean;
 }
 
-function DropdownWrapper({ children, buttonRef, setToggle }: IDropdownWrapper) {
+function DropdownWrapper({ children, buttonRef, setToggle, calendar }: IDropdownWrapper) {
   const dropdownRef = useRef<HTMLElement>(null);
 
   useDropdown(buttonRef, dropdownRef, setToggle);
 
   return (
     <aside
-      className={`${styles.dropdownContainer} ${styles.customClass}`}
+      className={`${styles.dropdownContainer} ${
+        calendar ? styles.calendar : styles.customClass
+      }`}
       ref={dropdownRef}
     >
       {children}

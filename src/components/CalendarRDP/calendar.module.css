@@ -1,0 +1,10 @@
+.footerCalendar {
+  display: flex;
+  width: max-content;
+  margin-left: auto;
+  margin-top: 1.9rem;
+}
+
+.footerCalendar > button:not(:last-child) {
+  margin-right: 0.8rem;
+}

@@ -4,13 +4,11 @@ import DropdownWrapper from './DropdownWrapper';
 
 interface IDropdown {
   children: ReactNode;
-  name?: string | ReactNode;
-  buttonName?: string;
-  dropdownIcon?: string;
-  dropdownIconOpen?: string;
+  name: string | ReactNode;
+  calendar?: boolean;
 }
 
-function Dropdown({ children, name }: IDropdown) {
+function Dropdown({ children, name, calendar = false }: IDropdown) {
   const [toggle, setToggle] = useState<boolean>(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -25,7 +23,7 @@ function Dropdown({ children, name }: IDropdown) {
         />
       )}
       {toggle && (
-        <DropdownWrapper setToggle={setToggle} buttonRef={buttonRef}>
+        <DropdownWrapper calendar={calendar} setToggle={setToggle} buttonRef={buttonRef}>
           {children}
         </DropdownWrapper>
       )}
