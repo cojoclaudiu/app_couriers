@@ -1,4 +1,5 @@
 import data from '../../data/data.json';
+import FrisboID from './FrisboID';
 import styles from './index.module.css';
 import Row from './Row';
 
@@ -6,7 +7,7 @@ function TableFC() {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableHeader}>
-        <div className={styles.idContainer}>Frisbo</div>
+        <FrisboID />
         <div>Courier</div>
         <div>COD</div>
         <div>AWB</div>

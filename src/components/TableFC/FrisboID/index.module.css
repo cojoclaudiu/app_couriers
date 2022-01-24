@@ -1,0 +1,28 @@
+.frisboIDContainer {
+  display: flex;
+  color: var(--gray-5);
+  align-items: center;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.8rem;
+}
+
+.buttonArrow {
+  display: flex;
+  width: 0.6rem;
+  height: 0.4rem;
+  color: currentColor;
+  cursor: pointer;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+  color: var(--gray-3);
+}
+
+.arrowDown {
+  margin-top: 1px;
+}
