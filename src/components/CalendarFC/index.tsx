@@ -13,7 +13,19 @@ function CalendarFC() {
     to: undefined,
   });
   const { from, to } = calendarDays;
-  const modifiers = { start: from, end: to };
+  const modifiers = {
+    start: from,
+    end: to,
+    highlighted: {
+      from,
+      to,
+    },
+
+    range: {
+      after: from,
+      before: to,
+    },
+  };
 
   const handleRangeClick = (day: any) => {
     const range = DateUtils.addDayToRange(day, calendarDays);
@@ -33,17 +45,12 @@ function CalendarFC() {
         numberOfMonths={2}
         onDayClick={handleRangeClick}
         selectedDays={[from, { from, to }]}
-        modifiers={modifiers}
+        modifiers={from && modifiers}
         firstDayOfWeek={1}
         className="Selectable"
         captionElement={({ date }) => <CalendarMonth date={date} />}
         // I will add custom navigation in CalendarNavbar component
         canChangeMonth={false}
-        // @fixedWeeks Use the fixedWeeks prop to display 6 weeks per month.
-        // fixedWeeks
-
-        // @showOutsideDays show/display the outside days but keep the container
-        // showOutsideDays={true}
       />
       <div className={styles.footerCalendar}>
         <PrimaryButton name="Cancel" onClick={() => {}} type="plain" />
