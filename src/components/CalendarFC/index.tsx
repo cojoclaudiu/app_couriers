@@ -43,7 +43,7 @@ function CalendarFC() {
         // fixedWeeks
 
         // @showOutsideDays show/display the outside days but keep the container
-        showOutsideDays={false}
+        // showOutsideDays={true}
       />
       <div className={styles.footerCalendar}>
         <PrimaryButton name="Cancel" onClick={() => {}} type="plain" />

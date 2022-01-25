@@ -50,6 +50,10 @@ WEEK ROWS AND WEEK DAYS NAME */
   margin-bottom: 0.5rem;
 }
 
+.DayPicker-Day {
+  cursor: pointer;
+}
+
 /* SELECTED START DAY */
 .DayPicker-Day.DayPicker-Day--start.DayPicker-Day--selected[aria-selected='true'] {
   display: flex;
@@ -58,8 +62,8 @@ WEEK ROWS AND WEEK DAYS NAME */
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: red;
   color: white;
+  background-color: var(--green-4);
   z-index: 1;
 }
 
@@ -71,29 +75,19 @@ WEEK ROWS AND WEEK DAYS NAME */
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: red;
   color: white;
+  background-color: var(--green-4);
 }
 
-/* DAYS OUTSIDE THE CALENDAR AND DISABLED */
-/* .DayPicker-Months
-  .DayPicker-Month
-  .DayPicker-Week
-  .DayPicker-Day.DayPicker-Day--selected.DayPicker-Day--outside[aria-disabled='true'] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background-color: gold;
-} */
-
-.DayPicker-Week
-  .DayPicker-Day.DayPicker-Day--selected.DayPicker-Day--outside:not(.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected) {
-  display: block;
-  width: 3.2rem;
+/* ALL THE SELECTED DATES BETWEEN START AND END DATE */
+.DayPicker-Day--selected[aria-selected='true'][aria-disabled='false']:not(.DayPicker-Day.DayPicker-Day--start.DayPicker-Day--selected):not(.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected):hover::before {
+  content: '';
+  width: 2.5rem;
   height: 2.5rem;
-  background-color: purple;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--green-4);
+  cursor: pointer;
 }
 
 /* DAYS IN RANGE BUT NOT DAY START/END SELECTED */
@@ -103,26 +97,45 @@ WEEK ROWS AND WEEK DAYS NAME */
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: olivedrab;
+  background-color: var(--green-1);
 }
 
 .DayPicker-Day.DayPicker-Day--selected[aria-selected='true'].DayPicker-Day--start.DayPicker-Day--selected:not(.DayPicker-Day--end.DayPicker-Day--selected)
   + [aria-selected='true']::after {
   content: '';
-  width: 2.5rem;
+  width: 1.5rem;
   height: 2.5rem;
   position: absolute;
-  margin-right: 4rem;
-  /* left: 1rem; */
-  background-color: yellowgreen;
+  margin-right: 4.5rem;
+  background-color: var(--green-1);
 }
 
-.DayPicker-Day.DayPicker-Day--selected[aria-selected='true'].DayPicker-Day--end.DayPicker-Day--selected:not(.DayPicker-Day--start.DayPicker-Day--selected):not(:first-child):before {
+.DayPicker-Day.DayPicker-Day--selected[aria-selected='true'].DayPicker-Day--end.DayPicker-Day--selected:not(.DayPicker-Day--start.DayPicker-Day--selected):not(:first-child)::before {
   content: '';
   width: 2rem;
   height: 2.5rem;
   position: absolute;
   margin-right: 2rem;
-  background-color: peru;
   z-index: -1;
+  background-color: var(--green-1);
+}
+
+/* NO BORDER RADIUS ON HOVER FOR THE END DATE */
+.DayPicker-Day.DayPicker-Day--selected[aria-selected='true'].DayPicker-Day--end.DayPicker-Day--selected:not(.DayPicker-Day--start.DayPicker-Day--selected):not(:first-child):hover::before {
+  border-radius: 0;
+}
+
+.DayPicker-Day--selected.DayPicker-Day--outside {
+  pointer-events: none;
+}
+
+.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected.DayPicker-Day--outside ~ *,
+.DayPicker-Day.DayPicker-Day--end.DayPicker-Day--selected .DayPicker-Day--outside,
+.DayPicker-Day.DayPicker-Day--selected.DayPicker-Day--outside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.5rem;
+  background-color: var(--green-1);
 }
