@@ -7,6 +7,14 @@ import AWB from '../../AWB';
 import Timestamp from '../../Timestamp';
 import ChevronIcon from '../../Icons/ChevronIcon';
 import styles from './index.module.css';
+import {
+  lastItemStatus,
+  primaryColor,
+  secondaryColor,
+  selectedItemsTable,
+  statusLabel,
+  tableRowColor,
+} from './rowsLogic';
 
 interface IRow {
   index: number;
@@ -26,59 +34,54 @@ interface IRow {
 }
 
 function Row({ item, index }: IRow) {
-  const selectedItemsTable = [15, 13, 11, 3];
-  const lastItemStatus = (index: number) =>
-    ((index === 14 || index === 12 || index === 0 || index === 2) && 'successLight') ||
-    ((index === 13 || index === 3) && 'successDark') ||
-    (index === 15 && 'warningDarkOutline') ||
-    (index === 11 && 'noticeDark') ||
-    'warningLight';
-
   const { selectedItems } = useRowDelimiter(styles.delimiter);
 
   return (
     <Fragment key={item.id}>
-      <div
-        className={`${styles.tableRow}   ${
-          (index === 15 ? styles.rowRed : '') ||
-          (index === 13 || index === 3 ? styles.rowGreen : '') ||
-          (index === 11 ? styles.rowBlue : '')
-        }`}
-      >
-        <Cell element={<div className={styles.idContainer}>{item.id}</div>} />
+      <div className={tableRowColor(index, styles)}>
+        <Cell
+          primaryColor={primaryColor(index)}
+          element={<div className={`${styles.idContainer} `}>{item.id}</div>}
+        />
         <Cell element={<CourierAvatar type={item.courier} />} />
         <Cell
+          element={item.cod && <StatusLabel label="COD" type={statusLabel(index)} />}
+        />
+
+        <Cell
+          primaryColor={primaryColor(index)}
           element={
-            item.cod && (
-              <StatusLabel
-                label="COD"
-                type={
-                  (index === 15 && 'warningDark') ||
-                  (index === 13 && 'successDark') ||
-                  (index === 11 && 'noticeOutline') ||
-                  (index === 10 && 'warningOutline') ||
-                  (index === 3 && 'successOutline') ||
-                  'defaultOutline'
-                }
-              />
-            )
+            <AWB
+              secondaryColor={secondaryColor(index)}
+              number={item.awb}
+              timestamp={item.date}
+            />
           }
         />
-        <Cell element={<AWB number={item.awb} timestamp={item.date} />} />
         <Cell
+          primaryColor={item.returnAWB ? primaryColor(index) : secondaryColor(index)}
           element={
             item.returnAWB ? (
-              <AWB number={item.returnAWB} timestamp={item.returnDate} />
+              <AWB
+                secondaryColor={secondaryColor(index)}
+                number={item.returnAWB}
+                timestamp={item.returnDate}
+              />
             ) : (
               <hr className={styles.noItemInCell} />
             )
           }
         />
-        <Cell element={item.seller} />
+        <Cell primaryColor={primaryColor(index)} element={item.seller} />
         <Cell
           element={<StatusLabel label={item.lastStatus} type={lastItemStatus(index)} />}
         />
-        <Cell element={<Timestamp dateTime={item.timestamp} />} />
+        <Cell
+          primaryColor={primaryColor(index)}
+          element={
+            <Timestamp secondaryColor={secondaryColor(index)} dateTime={item.timestamp} />
+          }
+        />
         <Cell
           element={
             <div className={styles.chevronIcon}>

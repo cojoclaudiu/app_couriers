@@ -1,5 +1,5 @@
 import data from '../../data/data.json';
-import FrisboID from './FrisboID';
+import CellAscendingDescending from './CellAscendingDescending';
 import styles from './index.module.css';
 import Row from './Row';
 
@@ -7,14 +7,14 @@ function TableFC() {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableHeader}>
-        <FrisboID />
+        <CellAscendingDescending name="Frisbo #" />
         <div>Courier</div>
         <div>COD</div>
         <div>AWB</div>
         <div>Return AWB</div>
         <div>Seller</div>
         <div>Last Status</div>
-        <div>Timestamp</div>
+        <CellAscendingDescending name="Timestamp" />
       </div>
 
       {data.map((item, index) => {

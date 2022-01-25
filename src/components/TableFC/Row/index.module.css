@@ -6,24 +6,26 @@
   border-radius: 0.4rem;
   background-color: white;
   transition: all 0.1s ease-in;
+  color: var(--gray-3);
+  transition: all 0.2s ease-in-out;
 }
 
 .tableRow:hover {
-  filter: brightness(0.96);
+  filter: contrast(0.95);
 }
 
 .rowRed {
   background-color: var(--coral-1);
-  color: var(--coral);
+  color: var(--coral-3);
 }
 
 .rowGreen {
-  color: var(--green);
+  color: var(--green-5);
   background-color: var(--green-1);
 }
 
 .rowBlue {
-  color: var(--blue);
+  color: var(--blue-3);
   background-color: var(--blue-1);
 }
 
@@ -48,6 +50,7 @@
 }
 
 .noItemInCell {
+  color: inherit;
   width: 3.2rem;
   margin: 0;
   padding: 0;

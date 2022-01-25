@@ -3,3 +3,38 @@
   max-width: var(--max);
   margin: 0 auto;
 }
+.currentColor {
+  color: currentColor;
+}
+
+.success {
+  color: var(--green);
+}
+
+.notice {
+  color: var(--blue);
+}
+
+.warning {
+  color: var(--coral);
+}
+
+.default {
+  color: var(--gray-6);
+}
+
+.successLight {
+  color: var(--green-5);
+}
+
+.noticeLight {
+  color: var(--blue-3);
+}
+
+.warningLight {
+  color: var(--coral-3);
+}
+
+.defaultLight {
+  color: var(--gray-4);
+}

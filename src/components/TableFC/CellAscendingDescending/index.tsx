@@ -1,10 +1,14 @@
 import DropdownIcon from '../../Icons/DropdownIcon';
 import styles from './index.module.css';
 
-function FrisboID() {
+interface ITableHeaderID {
+  name: string;
+}
+
+function CellAscendingDescending({ name = 'Default' }: ITableHeaderID) {
   return (
-    <div className={styles.frisboIDContainer}>
-      <span>Frisbo #</span>
+    <div className={styles.tableHeaderContainer}>
+      <span>{name}</span>
       <div className={styles.buttonsContainer}>
         <button className={`${styles.buttonArrow} ${styles.arrowUp}`}>
           <DropdownIcon />
@@ -18,4 +22,4 @@ function FrisboID() {
   );
 }
 
-export default FrisboID;
+export default CellAscendingDescending;
