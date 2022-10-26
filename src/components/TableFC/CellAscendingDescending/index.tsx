@@ -1,4 +1,4 @@
-import DropdownIcon from '../../Icons/DropdownIcon';
+import DropdownIcon from '../../../icons/DropdownIcon';
 import styles from './index.module.css';
 
 interface ITableHeaderID {

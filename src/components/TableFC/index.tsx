@@ -7,7 +7,7 @@ function TableFC() {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableHeader}>
-        <CellAscendingDescending name="Frisbo #" />
+        <CellAscendingDescending name="Vite #" />
         <div>Courier</div>
         <div>COD</div>
         <div>AWB</div>

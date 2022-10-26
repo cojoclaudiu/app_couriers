@@ -5,7 +5,7 @@ import CourierAvatar from '../../CourierAvatar';
 import StatusLabel from '../../StatusLabel';
 import AWB from '../../AWB';
 import Timestamp from '../../Timestamp';
-import ChevronIcon from '../../Icons/ChevronIcon';
+import ChevronIcon from '../../../icons/ChevronIcon';
 import styles from './index.module.css';
 import {
   lastItemStatus,

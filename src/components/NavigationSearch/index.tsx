@@ -1,4 +1,4 @@
-import SearchIcon from '../Icons/SearchIcon';
+import SearchIcon from '../../icons/SearchIcon';
 import styles from './index.module.css';
 
 function NavigationSearch() {

@@ -1,9 +1,17 @@
-import CalendarFC from '../CalendarFC';
 import Dropdown from '../Dropdown';
 import DropdownItem from '../Dropdown/DropdownItem';
 import styles from './index.module.css';
 
 function NavigationFilters() {
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'short',
+    year: '2-digit',
+    month: 'short',
+    day: 'numeric',
+  };
+
+  const day = new Date().toLocaleDateString('en-us', options);
+
   return (
     <div className={styles.filtersWrapper}>
       <div className={styles.filterContainer}>
@@ -37,9 +45,8 @@ function NavigationFilters() {
       </div>
 
       <div className={styles.filterDate}>
-        <div>Date:</div>
-        {/* <CalendarDateRange /> */}
-        <CalendarFC />
+        <div>Date: </div>
+        {day}
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import styles from './index.module.css';
 
-interface IBodyFC {
+interface BodyProps {
   children: ReactNode;
 }
 
-function BodyFC({ children }: IBodyFC) {
+function Body({ children }: BodyProps) {
   return <main className={styles.bodyWrapper}>{children}</main>;
 }
 
-export default BodyFC;
+export default Body;

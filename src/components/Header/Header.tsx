@@ -1,16 +1,16 @@
 import AllCouriers from '../AllCouriers';
-import FrisboLogo from '../Icons/FrisboLogo';
-import styles from './index.module.css';
+import ViteLogo from '../../icons/ViteLogo';
+import styles from './Header.module.css';
 
-function HeaderFC() {
+function Header() {
   return (
     <header className={styles.headerWrapper}>
       <div className={styles.logoWrapper}>
-        <FrisboLogo />
+        <ViteLogo />
       </div>
       <AllCouriers />
     </header>
   );
 }
 
-export default HeaderFC;
+export default Header;

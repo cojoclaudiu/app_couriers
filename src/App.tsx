@@ -1,16 +1,16 @@
-import BodyFC from './components/BodyFC';
-import HeaderFC from './components/HeaderFC';
+import Body from './components/Body/';
+import Header from './components/Header';
 import NavigationOptions from './components/NavigationOptions';
 import TableFC from './components/TableFC';
 
 function App() {
   return (
     <div className="app">
-      <HeaderFC />
-      <BodyFC>
+      <Header />
+      <Body>
         <NavigationOptions />
         <TableFC />
-      </BodyFC>
+      </Body>
     </div>
   );
 }

@@ -9,8 +9,14 @@
 }
 
 .logoWrapper {
+  width: 8rem;
+  height: 4rem;
   padding-right: 2.4rem;
   margin-right: 2.4rem;
   border-right: var(--border-1);
   cursor: pointer;
+}
+
+.logoWrapper > svg {
+  height: 4rem;
 }
